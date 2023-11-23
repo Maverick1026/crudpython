@@ -1,11 +1,12 @@
 import mysql.connector
+import os
 
 # Define the connection parameters
 db_config = {
-    "host": "localhost",  # Replace with the server's address
-    "user": "root",  # Replace with your MySQL username
-    "password": "",  # Replace with your MySQL password
-    "database": "crud python",  # Replace with the name of your database
+    "host": os.getenv("DB_HOST", "localhost"),
+    "user": os.getenv("DB_USER", "root"),
+    "password": os.getenv("DB_PASSWORD", ""),
+    "database": os.getenv("DB_NAME", "crud_python"),
 }
 
 # Create a connection
